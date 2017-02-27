@@ -1,14 +1,41 @@
 package clinic.programming.training;
 
-public class Application {
-    
-    public Application() {
-        System.out.println ("Inside Application");
-    }
 
-    // method main(): ALWAYS the APPLICATION entry point
-    public static void main (String[] args) {
-    	System.out.println ("Starting Application");
-	Application app = new Application();
-    }
+import java.util.HashMap;
+import java.util.Set;
+
+public class Application{
+
+	public void dupli(String str)
+	{
+		char[] chr = str.toCharArray();
+		HashMap<Character, Integer> dup = new HashMap<>();
+		for (Character ch:chr)
+		{
+			if(dup.containsKey(ch)){
+				dup.put(ch, dup.get(ch)+1);
+			}
+			else
+			{
+				dup.put(ch, 1);
+
+			}
+		}
+		
+		System.out.println(dup);
+
+		//Set<Character> keys= dup.keySet();
+		//for (Character ch: keys){
+		
+				//System.out.println(ch+"---->"+ dup.get(ch));
+			
+		//}
+		
+	}
+		public static void main(String [] args){
+			
+			Application dc = new Application();
+			dc.dupli("bfybfyuqeifwdgvd");
+		
+		}
 }
